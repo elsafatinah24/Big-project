@@ -1,0 +1,272 @@
+/* ================= GAYA UTAMA =================
+   Fondasi visual Modern Healthcare sesuai palet warna pada PRD. */
+
+:root {
+    --hijau-utama: #2E7D32;
+    --hijau-muda: #66BB6A;
+    --latar-hijau: #F1F8E9;
+    --teks-utama: #333333;
+    --bayangan-kartu: 0 .5rem 1.5rem rgba(39, 84, 42, .09);
+    --radius-kartu: 1rem;
+}
+
+body {
+    color: var(--teks-utama);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.55;
+}
+
+img { max-width: 100%; }
+
+/* ================= KOMPONEN UMUM ================= */
+.navbar { min-height: 56px; }
+.navbar-utama {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+}
+.kompensasi-navbar-utama { height: 56px; }
+.navbar-brand { min-width: 0; letter-spacing: -.01em; }
+.navbar .logo-navbar {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: 32px;
+    max-width: 40px;
+    max-height: 32px;
+    object-fit: contain;
+}
+.navbar .btn-registrasi {
+    width: auto;
+    min-height: 0;
+    padding: .35rem .7rem;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+.btn {
+    min-height: 2.5rem;
+    border-radius: .65rem;
+    font-weight: 600;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible,
+.form-control:focus,
+.form-select:focus,
+.accordion-button:focus {
+    box-shadow: 0 0 0 .22rem rgba(46, 125, 50, .18);
+}
+.form-control,
+.form-select {
+    min-height: 2.7rem;
+    border-color: #ced8cf;
+    border-radius: .65rem;
+}
+textarea.form-control { min-height: auto; }
+.form-control:focus,
+.form-select:focus { border-color: var(--hijau-muda); }
+.form-label { margin-bottom: .45rem; font-weight: 600; }
+.alert { border: 0; border-radius: .8rem; box-shadow: 0 .2rem .8rem rgba(39, 84, 42, .08); }
+.table-responsive { -webkit-overflow-scrolling: touch; }
+.table > :not(caption) > * > * { vertical-align: middle; }
+.badge { padding: .45em .65em; font-weight: 650; }
+.pagination { flex-wrap: nowrap; }
+.page-link { color: var(--hijau-utama); white-space: nowrap; }
+.page-item.active .page-link { border-color: var(--hijau-utama); background-color: var(--hijau-utama); }
+
+.bg-success,
+.btn-success {
+    background-color: var(--hijau-utama) !important;
+}
+
+.btn-success {
+    border-color: var(--hijau-utama);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #1f5f25 !important;
+    border-color: #1f5f25;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--hijau-utama) !important;
+}
+
+/* ================= LANDING PAGE ================= */
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link:focus {
+    color: #ffffff !important;
+}
+
+.bagian-hero {
+    background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 62%);
+}
+
+.py-lg-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.lencana-hero,
+.teks-label {
+    color: var(--hijau-utama);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.lencana-hero {
+    display: inline-block;
+    padding: .5rem .85rem;
+    background-color: #dcedc8;
+    border-radius: 999px;
+    letter-spacing: .02em;
+    text-transform: none;
+}
+
+.judul-hero {
+    max-width: 620px;
+    color: #1f3a22;
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -.045em;
+    line-height: 1.08;
+}
+
+.judul-bagian {
+    color: #1f3a22;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 750;
+    letter-spacing: -.03em;
+}
+
+.teks-kepercayaan { color: #4b5f4d; font-size: .92rem; }
+.batas-judul { max-width: 650px; }
+.batas-faq { max-width: 800px; }
+.bagian-latar-hijau { background-color: var(--latar-hijau); }
+
+.ilustrasi-kesehatan {
+    position: relative;
+    width: min(100%, 500px);
+    min-height: 360px;
+    overflow: hidden;
+    border-radius: 2rem;
+    background: linear-gradient(145deg, #2e7d32, #66bb6a);
+    box-shadow: 0 1.5rem 3.5rem rgba(46, 125, 50, .2);
+}
+
+.lingkaran-dekorasi { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); }
+.lingkaran-satu { width: 330px; height: 330px; top: -110px; right: -70px; }
+.lingkaran-dua { width: 260px; height: 260px; bottom: -120px; left: -80px; }
+
+.kartu-ilustrasi {
+    position: absolute;
+    z-index: 1;
+    background: rgba(255,255,255,.96);
+    border-radius: 1rem;
+    box-shadow: 0 .75rem 1.75rem rgba(19, 70, 23, .2);
+}
+
+.kartu-dokter { top: 72px; left: 42px; display: flex; align-items: center; gap: .8rem; padding: 1rem; }
+.kartu-dokter strong, .kartu-dokter span { display: block; }
+.kartu-dokter span { color: #6c757d; font-size: .8rem; }
+.ikon-dokter, .panel-profil-ikon { display: grid; place-items: center; color: white; background: var(--hijau-utama); font-size: 2rem; font-weight: 600; }
+.ikon-dokter { width: 48px; height: 48px; border-radius: 50%; }
+.kartu-antrean { right: 35px; bottom: 74px; padding: 1rem 1.3rem; }
+.kartu-antrean span { display: block; color: #607064; font-size: .8rem; }
+.nomor-ilustrasi { color: var(--hijau-utama) !important; font-size: 2rem !important; font-weight: 800; }
+.kartu-status { left: 78px; bottom: 38px; display: flex; gap: .5rem; align-items: center; padding: .75rem 1rem; font-size: .85rem; }
+.titik-status { width: 9px; height: 9px; border-radius: 50%; background: #4caf50; }
+
+.panel-profil { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 280px; padding: 2rem; overflow: hidden; color: white; font-size: 1.25rem; font-weight: 600; border-radius: 1.5rem; background: linear-gradient(145deg, #66bb6a, #2e7d32); }
+.panel-profil-gambar { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.panel-profil::before { position: absolute; inset: 0; z-index: 1; content: ''; background: linear-gradient(145deg, rgba(46, 125, 50, .52), rgba(24, 88, 39, .86)); }
+.panel-profil-ikon, .panel-profil p { position: relative; z-index: 2; }
+.panel-profil-ikon { width: 65px; height: 65px; margin-bottom: auto; border-radius: 1rem; background: rgba(255,255,255,.2); }
+
+.kartu-layanan { padding: 1.75rem; border-radius: 1rem; background: white; box-shadow: 0 .5rem 1.5rem rgba(46, 125, 50, .08); transition: transform .2s ease, box-shadow .2s ease; }
+.kartu-layanan:hover { transform: translateY(-4px); box-shadow: 0 .9rem 2rem rgba(46, 125, 50, .14); }
+.ikon-layanan { display: grid; width: 48px; height: 48px; place-items: center; color: var(--hijau-utama); font-size: .82rem; font-weight: 800; border-radius: .75rem; background: #dcedc8; }
+.ikon-informasi { display: grid; place-items: center; width: 45px; height: 45px; color: var(--hijau-utama); font-weight: 800; border-radius: 50%; background: #dcedc8; }
+
+.accordion-button:not(.collapsed) { color: var(--hijau-utama); background-color: #f7fbf4; box-shadow: none; }
+.accordion-button:focus { box-shadow: 0 0 0 .2rem rgba(46, 125, 50, .18); }
+.ajakan-antrean { color: white; background: linear-gradient(120deg, #2e7d32, #66bb6a); }
+
+@media (max-width: 991.98px) {
+    .ilustrasi-kesehatan { min-height: 330px; }
+}
+
+@media (max-width: 575.98px) {
+    .navbar .container { padding-right: 1rem; padding-left: 1rem; }
+    .navbar-nav { padding: .65rem 0; }
+    .navbar .nav-link { padding: .55rem 0; }
+    .navbar .btn { width: auto; }
+    .py-lg-6 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    .judul-hero { font-size: clamp(2.05rem, 11vw, 2.9rem); }
+    .judul-bagian { font-size: 1.65rem; }
+    .kartu-layanan { padding: 1.35rem; }
+    .ilustrasi-kesehatan { min-height: 300px; border-radius: 1.35rem; }
+    .kartu-dokter { top: 45px; left: 22px; }
+    .kartu-antrean { right: 20px; bottom: 58px; }
+    .kartu-status { left: 34px; bottom: 25px; }
+    .btn { width: 100%; }
+    .d-flex.gap-2 > .btn,
+    .d-inline-flex.gap-2 > .btn { width: auto; }
+    .navbar-admin .container-fluid,
+    .navbar-dokter .container-fluid { gap: .35rem; padding-right: .75rem; padding-left: .75rem; }
+    .navbar-admin .navbar-brand,
+    .navbar-dokter .navbar-brand { gap: .3rem !important; font-size: clamp(.62rem, 3vw, .78rem); white-space: nowrap; }
+    .navbar-admin .logo-navbar,
+    .navbar-dokter .logo-navbar { height: 25px !important; max-height: 25px !important; }
+    .navbar-admin .d-flex,
+    .navbar-dokter .d-flex { gap: .5rem !important; }
+    .navbar-admin .btn,
+    .navbar-dokter .btn { width: auto; min-height: 2.15rem; padding: .3rem .55rem; white-space: nowrap; }
+    .modal-dialog { margin: .75rem; }
+    .modal-footer { gap: .5rem; }
+    .modal-footer .btn { flex: 1 1 0; width: auto; }
+    .pagination { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .panel-profil { min-height: 260px; padding: 1.5rem; }
+}
+
+@media (max-width: 767.98px) {
+    .form-password-registrasi,
+    .form-password-pasien-admin,
+    .form-password-profil {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .form-password-registrasi .form-control,
+    .form-password-pasien-admin .form-control,
+    .form-password-profil .form-control {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+    }
+    .form-password-registrasi .btn,
+    .form-password-pasien-admin .btn,
+    .form-password-profil .btn {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        width: auto !important;
+        max-width: none;
+        white-space: nowrap;
+    }
+    .navbar-utama .navbar-collapse { padding-top: .5rem; }
+    .navbar-utama .navbar-nav { align-items: stretch !important; gap: 0 !important; }
+    .navbar-utama .nav-item,
+    .navbar-utama .nav-link { width: 100%; }
+}

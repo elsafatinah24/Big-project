@@ -1,0 +1,222 @@
+/* ================= GAYA DASHBOARD ADMIN =================
+   Tampilan Modern Healthcare untuk statistik, grafik, dan informasi operasional. */
+
+.halaman-dashboard {
+    background-color: #f1f8e9;
+    min-height: 100vh;
+}
+
+.navbar-admin,
+.navbar-dokter {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.kompensasi-navbar-dashboard { height: 56px; }
+
+.dashboard-layout > main { min-width: 0; }
+
+.sidebar-admin,
+.sidebar-pasien {
+    flex: 0 0 260px;
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar-admin .nav-link,
+.sidebar-pasien .nav-link {
+    padding: .7rem .8rem;
+    border-radius: .65rem;
+    font-weight: 600;
+    transition: background-color .18s ease, color .18s ease;
+}
+
+.sidebar-admin .nav-link.aktif {
+    color: #fff !important;
+    background-color: #2e7d32;
+}
+
+.sidebar-pasien .nav-link.active {
+    box-shadow: 0 .25rem .7rem rgba(46, 125, 50, .2);
+}
+
+.kartu-statistik,
+.kartu-dashboard {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 .35rem 1.2rem rgba(39, 84, 42, .08);
+}
+
+.kartu-dashboard .table-responsive { border-radius: 0 0 1rem 1rem; }
+.kartu-dashboard .table { --bs-table-hover-bg: #f5faf4; }
+.kartu-dashboard .table thead th { white-space: nowrap; font-size: .84rem; }
+.kartu-dashboard .table td { font-size: .92rem; }
+.kartu-dashboard .btn-sm { min-height: 2rem; border-radius: .55rem; font-size: .8rem; }
+
+.kartu-statistik { height: 100%; }
+.angka-statistik { color: #1f3a22; font-size: 1.8rem; font-weight: 750; }
+.label-statistik { color: #647066; font-size: .86rem; }
+
+.ikon-statistik {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    color: #2e7d32;
+    font-size: .78rem;
+    font-weight: 800;
+    border-radius: .85rem;
+    background-color: #dcedc8;
+}
+
+.ikon-menunggu { color: #a86200; background-color: #fff0d4; }
+.ikon-dipanggil { color: #1265a8; background-color: #dceeff; }
+.ikon-selesai { color: #2e7d32; background-color: #dcedc8; }
+
+.judul-kartu { color: #1f3a22; font-size: 1rem; font-weight: 700; }
+.wadah-grafik { position: relative; min-height: 275px; }
+.wadah-grafik canvas { max-width: 100% !important; }
+.nomor-dipanggil { color: #2e7d32; font-size: 2rem; font-weight: 800; letter-spacing: -.04em; }
+.kartu-panggilan { border-left: 4px solid #66bb6a; }
+.status-kosong { color: #6c757d; font-size: .92rem; }
+
+.daftar-antrean .item-antrean:last-child,
+.daftar-berita .item-berita:last-child { border-bottom: 0 !important; }
+
+@media (max-width: 991.98px) {
+    .dashboard-layout { flex-direction: column; }
+    .sidebar-admin,
+    .sidebar-pasien {
+        width: 100% !important;
+        min-height: auto !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .sidebar-admin .nav,
+    .sidebar-pasien .nav {
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: .2rem;
+    }
+    .sidebar-admin .nav-link,
+    .sidebar-pasien .nav-link { flex: 0 0 auto; }
+}
+
+@media (max-width: 767.98px) {
+    .tombol-semua-antrean {
+        display: inline-flex;
+        flex: 0 0 auto !important;
+        align-self: flex-start;
+        align-items: center;
+        justify-content: center;
+        width: auto !important;
+        min-height: 2.25rem;
+        padding: .35rem .65rem;
+        white-space: nowrap;
+    }
+    .form-actions-poli {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 100%;
+    }
+    .form-actions-poli .btn {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 2.7rem;
+        margin: 0;
+        text-align: center;
+    }
+    .form-password-dokter,
+    .formulir-cari-akun-dokter {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .form-password-dokter,
+    .formulir-cari-akun-dokter .input-group {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        width: 100%;
+    }
+    .form-password-dokter .form-control,
+    .formulir-cari-akun-dokter .form-control {
+        flex: 1 1 0;
+        width: 1%;
+        min-width: 0;
+        max-width: 100%;
+    }
+    .form-password-dokter .btn,
+    .formulir-cari-akun-dokter .btn {
+        flex: 0 0 auto;
+        width: auto !important;
+        min-height: 2.7rem;
+        white-space: nowrap;
+        padding-right: .75rem;
+        padding-left: .75rem;
+    }
+    .dashboard-layout > .sidebar-admin {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        left: 0;
+        width: min(85vw, 300px) !important;
+        min-height: calc(100vh - 56px) !important;
+        overflow-y: auto;
+        visibility: hidden;
+        pointer-events: none;
+        border-bottom: 0 !important;
+        box-shadow: .5rem 0 1.5rem rgba(39, 84, 42, .14);
+        transform: translateX(-100%);
+        transition: transform .2s ease, visibility .2s ease;
+    }
+    .dashboard-layout > .sidebar-admin.sidebar-terbuka {
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+    #sidebarAdmin.sidebar-terbuka,
+    #sidebarDokter.sidebar-terbuka {
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+    .sidebar-admin .nav,
+    .sidebar-pasien .nav {
+        flex-direction: column !important;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+    .sidebar-admin .nav-link,
+    .sidebar-pasien .nav-link {
+        width: 100%;
+        flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .halaman-dashboard main { padding: 1rem !important; }
+    .sidebar-admin,
+    .sidebar-pasien { padding: 1rem !important; }
+    .sidebar-admin > p,
+    .sidebar-pasien > p { margin-bottom: .65rem !important; }
+    .kartu-dashboard,
+    .kartu-statistik { border-radius: .8rem; }
+    .kartu-dashboard .card-body { padding: 1rem !important; }
+    .kartu-dashboard .card-body.p-0 { padding: 0 !important; }
+    .kartu-dashboard .table thead th,
+    .kartu-dashboard .table td { white-space: nowrap; }
+    .kartu-dashboard .table th,
+    .kartu-dashboard .table td { padding: .65rem .75rem; }
+    .kartu-dashboard .btn-sm { min-height: 2.25rem; padding: .35rem .65rem; }
+    .halaman-dashboard .d-flex.gap-2 { flex-wrap: wrap; }
+    .halaman-dashboard .d-flex.gap-2 > .btn { flex: 1 1 8rem; width: auto; }
+    .kartu-dashboard .card-body > .d-flex.justify-content-between { align-items: flex-start !important; gap: .5rem; }
+    .wadah-grafik { min-height: 230px; }
+    .nomor-dipanggil { font-size: 1.65rem; }
+}
